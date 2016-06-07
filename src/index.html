@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="css/app.css" rel="stylesheet">
+	<!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+<head>
+</head>
+<body>
+	<div id="divSignInContainer" class="container">
+		<form class="form-signin">
+			<h2 class="form-signin-heading">Please sign in</h2>
+			<!-- JIRA URL -->
+			<div class="input-group">
+				<span class="input-group-addon"><i class="glyphicon glyphicon-cloud"></i></span>
+				<input type="text" id="inputJiraUrl" class="form-control" placeholder="JIRA URL">
+			</div>
+			<!-- Username -->
+			<div class="input-group">
+				<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+				<input type="text" id="inputUsername" class="form-control" placeholder="Username">
+			</div>
+			<!-- Password -->
+			<div class="input-group">
+				<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+				<input type="password" id="inputPassword" class="form-control" placeholder="Password">
+			</div>
+			<!-- Remember Me -->
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" id="checkboxRememberMe" value="remember-me"> Remember me</input>
+				</label>
+			</div>
+			<!-- Error Message -->
+			<div id="divSignInErrorMessage" class="alert alert-danger" role="alert" style="visibility: hidden;">
+				<span class="glyphicon glyphicon-exclamation-sign"></span>
+				<span class="sr-only">Error:</span>
+				Double-check your credentials
+			</div>
+			<!-- Sign In -->
+			<button id="buttonSignIn" class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
+		</form>
+	</div>
+	<div id="dashboard" style="display: none;">
+		<!-- Dashboard header -->
+		<h3>Dashboard</h3>
+		<!-- Welcome message -->
+		<h4 id="headerWelcomeName">Welcome, {name}</h4>
+		<h5>Select a Report</h5>
+		<!-- Select List -->
+		<select id="selectReport" class="btn btn-default">
+			<option>Control Chart</option>
+		</select>
+		<!-- Run Report Button -->
+		<button class="btn btn-primary" type="button">Run Report</button>
+	</div>
+	
+<!-- Scripts -->
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-2.2.4.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.js"></script>
+	<!-- Populate credentials if Remember Me was selected last time -->
+	<script src="js/app-onload.js"></script>
+	<!-- Include a script to set the Sign In button's onclick fucntionality -->
+	<script src="js/sign-in.js"></script>
+</body>
+</html>
+

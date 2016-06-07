@@ -1,0 +1,23 @@
+{
+	"manifest_version": 2,
+	"name": "JIRA Chrome App",
+	"short_name": "JIRA",
+	"version": "0.0.1",
+	"description": "An example on getting started with the JIRA API and Google Apps.",
+	"minimum_chrome_version": "23",
+	"icons": {
+		"128": "img/icon-128.png"
+	},
+	"app": {
+		"background": {
+			"scripts": [
+				"js/app.js"
+			]
+		}
+	},
+	"permissions": [
+	"*://*/*",
+	"storage"
+	]
+}
+

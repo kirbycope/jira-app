@@ -1,0 +1,8 @@
+window.jiraUrl;window.username;window.password;window.rememberMe;function enableSignInButton(){$('#buttonSignIn').prop('disabled',false);}
+function invalidCredentials(){enableSignInButton();$('#divSignInErrorMessage').css('visibility','visible');}
+function signInSucess(){enableSignInButton();$('#divSignInContainer').css("display","none");$('#headerWelcomeName').html('Welcome, <i>'+window.username+'</i>!');$('#dashboard').css("display","block");}
+function testCredentials(){$.ajax
+({type:'GET',url:window.jiraUrl+'rest/auth/latest/session',dataType:'json',async:true,headers:{'Authorization':'Basic '+btoa(window.username+':'+window.password)},success:function(data){signInSucess();},error:function(data){invalidCredentials();}});}
+function signIn(e){e.preventDefault();$('#buttonSignIn').prop('disabled',true);window.jiraUrl=$('#inputJiraUrl').val();window.username=$('#inputUsername').val();window.password=$('#inputPassword').val();window.rememberMe=$('#checkboxRememberMe').is(':checked');if(window.rememberMe){chrome.storage.sync.set({"jiraUrl":window.jiraUrl,"username":window.username,"password":window.password,"rememberMe":window.rememberMe},function(){testCredentials(window.jiraUrl,window.username,window.password);});}
+else{chrome.storage.sync.set({"jiraUrl":"","username":"","password":"","rememberMe":""},function(){testCredentials(window.jiraUrl,window.username,window.password);});}}
+$(document).ready(function(){$('#buttonSignIn').click(this,signIn);});
