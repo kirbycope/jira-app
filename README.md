@@ -1,7 +1,6 @@
 # jira-app
 An example on getting started with the JIRA API and Google Chrome Apps
 
-This is a Chrome App that makes a call to the JIRA API (using the URL of your instance, like "https://example-jira.atlassian.net/").
-This is a Bootstrap enabled app that will make a single API to 'login' a user.
+[View the Wiki](https://github.com/kirbycope/jira-app/wiki)
 
-Here is the official JIRA API documentation, https://docs.atlassian.com/jira/REST/latest/
+![Screenshot](https://raw.githubusercontent.com/kirbycope/jira-app/master/jira-app.png)
